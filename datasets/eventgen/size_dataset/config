@@ -1,0 +1,113 @@
+//
+//  Config.xcconfig
+//  Morwilog_v2
+//
+//  Created by Julio Navarro Lara on 14/04/16.
+//  Copyright (c) 2016 Julio Navarro Lara. All rights reserved.
+//
+
+//ATTENTION, PLEASE: Don't use the symbol equal in the commentaries
+
+//Total number of logs in the set
+num_log=1000
+
+//Number of kind of possible attacks we will have in the set
+num_typ_attack=1
+
+//Number of kind of possible innocents we will have in the set
+num_typ_inn=5
+
+//Proportion of logs representing attacks in the set. It is represented as an int but it is neccesarry to divide to 10000 for getting the proportion. E.g. 1000 equal 10%
+prop_attack=50
+
+//Proportion of logs representing innocents in the set. The same as above
+prop_inn=2000
+
+//Maximum size of attacks and innocents
+max_size=3
+
+//Variability of size. If 0, always the maximum size
+var_size=0
+
+//Maximum step between logs in an attack/innocent. We need to increase it if we have a lot of logs
+max_step=3
+
+//No we need to declare the probabilities of the different fields in the log
+//We have three origins: fw, ws (web server) and ms (mail server). For each we have different kind of messages
+//In all the probabilities, we had to divide by 10000 after reading the file
+prob_fw=4000
+prob_ws=4000
+prob_ms=2000
+
+//FIREWALL
+
+//Actions (divide by 10000)
+//1:ACCEPT
+action_fw_1=6000
+//2:DROP
+action_fw_2=4000
+
+//Protocols
+//1:http
+prot_fw_1=4000
+//2:smtp
+prot_fw_2=3000
+//3:ftp
+prot_fw_3=2000
+//4:ssh
+prot_fw_4=1000
+
+//Number of values
+val_fw=10
+
+//WEB SERVER
+
+//Actions
+//1:GET
+action_ws_1=3500
+//2:HEAD
+action_ws_2=1500
+//3:OPTIONS
+action_ws_3=1000
+//4:CONNECT
+action_ws_4=1000
+//5:POST
+action_ws_5=1000
+//6:PUT
+action_ws_6=1000
+//7:TRACE
+action_ws_7=1000
+
+//Number of values
+val_ws=9
+
+//MAIL SERVER
+
+//Actions
+//1:HELO
+
+//2:MAIL_FROM
+
+//3:RCPT_TO
+
+//Number of values
+val_ms=1;
+
+//TIMESTAMP
+//The probability of taking a step of 0 seconds, 1 second, etc.
+prob_0_sec=3000
+prob_1_sec=4000
+prob_2_sec=2000
+prob_3_sec=1000
+
+//SOURCE IP
+//The probability of taking an IP address that already exists in the generation of logs
+prob_existent_src=9500
+
+
+DIV_P=10000
+
+num_ip_sources=300
+
+
+

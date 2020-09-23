@@ -1,0 +1,339 @@
+{
+  "format_version" : "1.0",
+  "generated_by" : "cytoscape-3.5.0",
+  "target_cytoscapejs_version" : "~2.1",
+  "data" : {
+    "shared_name" : "Example DARPA 2000",
+    "name" : "Example DARPA 2000",
+    "SUID" : 97,
+    "__Annotations" : [ "" ],
+    "selected" : true
+  },
+  "elements" : {
+    "nodes" : [ {
+      "data" : {
+        "id" : "116",
+        "shared_name" : "MSZ",
+        "e_star" : [ "EQL#type#Mstream_Zombie", "EQL#ipdst#255.255.255.255", "SIM_COM#ipsrc#ipsrc$_ipdst" ],
+        "name" : "MSZ",
+        "optional" : false,
+        "SUID" : 116,
+        "counter" : 1,
+        "id_original" : 9,
+        "selected" : false
+      },
+      "position" : {
+        "x" : 103.59474182128906,
+        "y" : 341.9339294433594
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "115",
+        "shared_name" : "MSZ",
+        "e_star" : [ "EQL#type#Mstream_Zombie", "SIM_NEQ#ipdst#ipdst" ],
+        "name" : "MSZ",
+        "optional" : false,
+        "SUID" : 115,
+        "counter" : 1,
+        "id_original" : 8,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -70.546142578125,
+        "y" : 343.4243469238281
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "114",
+        "shared_name" : "TelnetT",
+        "e_star" : [ "EQL#type#TelnetTerminaltype", "SIM_EQL#ipdst#ipdst" ],
+        "name" : "TelnetT",
+        "optional" : true,
+        "SUID" : 114,
+        "counter" : 1,
+        "id_original" : 7,
+        "selected" : false
+      },
+      "position" : {
+        "x" : 5.4865875244140625,
+        "y" : 261.0
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "113",
+        "shared_name" : "Rsh",
+        "e_star" : [ "EQL#type#Rsh", "SIM_EQL#ipsrc#ipdst", "SIM_EQL#ipdst#ipsrc" ],
+        "name" : "Rsh",
+        "optional" : false,
+        "SUID" : 113,
+        "counter" : 1,
+        "id_original" : 6,
+        "selected" : false
+      },
+      "position" : {
+        "x" : 73.0,
+        "y" : 181.0
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "112",
+        "shared_name" : "Rsh",
+        "e_star" : [ "EQL#type#Rsh", "SIM_EQL#ipdst#ipdst", "SIM_EQL#ipsrc#ipsrc" ],
+        "name" : "Rsh",
+        "optional" : false,
+        "SUID" : 112,
+        "counter" : 1,
+        "id_original" : 5,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -66.62149047851562,
+        "y" : 185.33743286132812
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "111",
+        "shared_name" : "TelnetT",
+        "e_star" : [ "EQL#type#TelnetTerminaltype", "SIM_EQL#ipdst#ipdst" ],
+        "name" : "TelnetT",
+        "optional" : false,
+        "SUID" : 111,
+        "counter" : 1,
+        "id_original" : 4,
+        "selected" : false
+      },
+      "position" : {
+        "x" : 68.48147583007812,
+        "y" : 102.87654876708984
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "110",
+        "shared_name" : "SAO or Ad",
+        "e_star" : [ "SET#type#Sadmind_Amslverify_Overflow$_Admind", "SIM_NEQ#type#type", "SIM_EQL#ipsrc#ipsrc", "SIM_EQL#ipdst#ipdst" ],
+        "name" : "SAO or Ad",
+        "optional" : false,
+        "SUID" : 110,
+        "id_original" : 3,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -72.01233673095703,
+        "y" : 103.7037124633789
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "109",
+        "shared_name" : "SAO",
+        "e_star" : [ "EQL#type#Sadmind_Amslverify_Overflow", "SIM_EQL#ipsrc#ipsrc", "SIM_EQL#ipdst#ipdst" ],
+        "name" : "SAO",
+        "optional" : false,
+        "SUID" : 109,
+        "counter" : 6,
+        "id_original" : 2,
+        "selected" : false
+      },
+      "position" : {
+        "x" : 66.5,
+        "y" : 21.5
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "108",
+        "shared_name" : "SAO or Ad",
+        "e_star" : [ "SET#type#Sadmind_Amslverify_Overflow$_Admind", "SIM_EQL#ipsrc#ipsrc", "SIM_EQL#ipdst#ipdst" ],
+        "name" : "SAO or Ad",
+        "optional" : false,
+        "SUID" : 108,
+        "id_original" : 1,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -60.945526123046875,
+        "y" : 21.0
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "107",
+        "shared_name" : "SP",
+        "e_star" : [ "EQL#type#Sadmind_Ping" ],
+        "name" : "SP",
+        "optional" : false,
+        "SUID" : 107,
+        "id_original" : 0,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -4.0,
+        "y" : -80.0
+      },
+      "selected" : false
+    } ],
+    "edges" : [ {
+      "data" : {
+        "id" : "128",
+        "source" : "114",
+        "target" : "116",
+        "shared_name" : "Node 1 (interacts with) Node 1",
+        "name" : "Node 1 (interacts with) Node 1",
+        "interaction" : "interacts with",
+        "SUID" : 128,
+        "shared_interaction" : "interacts with",
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "127",
+        "source" : "114",
+        "target" : "115",
+        "shared_name" : "Node 1 (interacts with) Node 1",
+        "name" : "Node 1 (interacts with) Node 1",
+        "interaction" : "interacts with",
+        "SUID" : 127,
+        "shared_interaction" : "interacts with",
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "126",
+        "source" : "113",
+        "target" : "114",
+        "shared_name" : "Node 1 (interacts with) Node 1",
+        "name" : "Node 1 (interacts with) Node 1",
+        "interaction" : "interacts with",
+        "SUID" : 126,
+        "shared_interaction" : "interacts with",
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "125",
+        "source" : "112",
+        "target" : "114",
+        "shared_name" : "Node 1 (interacts with) Node 1",
+        "name" : "Node 1 (interacts with) Node 1",
+        "interaction" : "interacts with",
+        "SUID" : 125,
+        "shared_interaction" : "interacts with",
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "124",
+        "source" : "111",
+        "target" : "113",
+        "shared_name" : "Node 1 (interacts with) Node 1",
+        "name" : "Node 1 (interacts with) Node 1",
+        "interaction" : "interacts with",
+        "SUID" : 124,
+        "shared_interaction" : "interacts with",
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "123",
+        "source" : "111",
+        "target" : "112",
+        "shared_name" : "Node 1 (interacts with) Node 1",
+        "name" : "Node 1 (interacts with) Node 1",
+        "interaction" : "interacts with",
+        "SUID" : 123,
+        "shared_interaction" : "interacts with",
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "122",
+        "source" : "110",
+        "target" : "113",
+        "shared_name" : "Node 1 (interacts with) Node 1",
+        "name" : "Node 1 (interacts with) Node 1",
+        "interaction" : "interacts with",
+        "SUID" : 122,
+        "shared_interaction" : "interacts with",
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "121",
+        "source" : "110",
+        "target" : "112",
+        "shared_name" : "Node 1 (interacts with) Node 1",
+        "name" : "Node 1 (interacts with) Node 1",
+        "interaction" : "interacts with",
+        "SUID" : 121,
+        "shared_interaction" : "interacts with",
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "120",
+        "source" : "109",
+        "target" : "111",
+        "shared_name" : "Node 1 (interacts with) Node 1",
+        "name" : "Node 1 (interacts with) Node 1",
+        "interaction" : "interacts with",
+        "SUID" : 120,
+        "shared_interaction" : "interacts with",
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "119",
+        "source" : "108",
+        "target" : "110",
+        "shared_name" : "Node 1 (interacts with) Node 1",
+        "name" : "Node 1 (interacts with) Node 1",
+        "interaction" : "interacts with",
+        "SUID" : 119,
+        "shared_interaction" : "interacts with",
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "118",
+        "source" : "107",
+        "target" : "109",
+        "shared_name" : "Node 1 (interacts with) Node 1",
+        "name" : "Node 1 (interacts with) Node 1",
+        "interaction" : "interacts with",
+        "SUID" : 118,
+        "shared_interaction" : "interacts with",
+        "selected" : false
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "117",
+        "source" : "107",
+        "target" : "108",
+        "shared_name" : "Node 1 (interacts with) Node 1",
+        "name" : "Node 1 (interacts with) Node 1",
+        "interaction" : "interacts with",
+        "SUID" : 117,
+        "shared_interaction" : "interacts with",
+        "selected" : false
+      },
+      "selected" : false
+    } ]
+  }
+}

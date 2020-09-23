@@ -1,0 +1,21 @@
+Reading logs...
+Read 494 logs
+../../datasets/darpa2000/simplified_parsed_v3/inside2_events_simplified_parsed_v3.csv
+Reading AASGs...
+Read 1 AASGs
+../aasg/mill2_test_darpa2000_aasg.json
+Probabilities initialized
+{'p_t_max': 1200, 'p_learning_rate': 0.4}
+[64066, 64077, 64072]
+[0, 5, 8]
+[276, 286, 287]
+----
+[64063, 64077, 64072]
+[0, 5, 8]
+[277, 286, 287]
+----
+Alerts
+2
+[[64072, 1005320207.0, 1], [64072, 1005320207.0, 2]]
+Execution time (seconds):
+0.471305131912

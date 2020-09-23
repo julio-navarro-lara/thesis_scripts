@@ -1,0 +1,266 @@
+===============================================================================
+Run time for packet processing was 1191.318896 seconds
+Snort processed 5763149 packets.
+Snort ran for 0 days 0 hours 19 minutes 51 seconds
+   Pkts/min:       303323
+   Pkts/sec:         4838
+===============================================================================
+Memory usage summary:
+  Total non-mmapped bytes (arena):       848506880
+  Bytes in mapped regions (hblkhd):      23814144
+  Total allocated space (uordblks):      554885872
+  Total free space (fordblks):           293621008
+  Topmost releasable block (keepcost):   87040
+===============================================================================
+Packet I/O Totals:
+   Received:      5763149
+   Analyzed:      5763149 (100.000%)
+    Dropped:            0 (  0.000%)
+   Filtered:            0 (  0.000%)
+Outstanding:            0 (  0.000%)
+   Injected:            0
+===============================================================================
+Breakdown by protocol (includes rebuilt packets):
+        Eth:      5769788 (100.000%)
+       VLAN:            0 (  0.000%)
+        IP4:      5753769 ( 99.722%)
+       Frag:            8 (  0.000%)
+       ICMP:         2299 (  0.040%)
+        UDP:       130822 (  2.267%)
+        TCP:      5620601 ( 97.414%)
+        IP6:         1248 (  0.022%)
+    IP6 Ext:         1287 (  0.022%)
+   IP6 Opts:           39 (  0.001%)
+      Frag6:            0 (  0.000%)
+      ICMP6:           39 (  0.001%)
+       UDP6:         1209 (  0.021%)
+       TCP6:            0 (  0.000%)
+     Teredo:            0 (  0.000%)
+    ICMP-IP:            0 (  0.000%)
+    IP4/IP4:            0 (  0.000%)
+    IP4/IP6:            0 (  0.000%)
+    IP6/IP4:            0 (  0.000%)
+    IP6/IP6:            0 (  0.000%)
+        GRE:            0 (  0.000%)
+    GRE Eth:            0 (  0.000%)
+   GRE VLAN:            0 (  0.000%)
+    GRE IP4:            0 (  0.000%)
+    GRE IP6:            0 (  0.000%)
+GRE IP6 Ext:            0 (  0.000%)
+   GRE PPTP:            0 (  0.000%)
+    GRE ARP:            0 (  0.000%)
+    GRE IPX:            0 (  0.000%)
+   GRE Loop:            0 (  0.000%)
+       MPLS:            0 (  0.000%)
+        ARP:        14771 (  0.256%)
+        IPX:            0 (  0.000%)
+   Eth Loop:            0 (  0.000%)
+   Eth Disc:            0 (  0.000%)
+   IP4 Disc:            0 (  0.000%)
+   IP6 Disc:            0 (  0.000%)
+   TCP Disc:            0 (  0.000%)
+   UDP Disc:            0 (  0.000%)
+  ICMP Disc:            0 (  0.000%)
+All Discard:            0 (  0.000%)
+      Other:           43 (  0.001%)
+Bad Chk Sum:            0 (  0.000%)
+    Bad TTL:            0 (  0.000%)
+     S5 G 1:         1202 (  0.021%)
+     S5 G 2:         5433 (  0.094%)
+      Total:      5769788
+===============================================================================
+Action Stats:
+     Alerts:        22820 (  0.396%)
+     Logged:        22820 (  0.396%)
+     Passed:            0 (  0.000%)
+Limits:
+      Match:            0
+      Queue:            0
+        Log:         1489
+      Event:         3846
+      Alert:           60
+Verdicts:
+      Allow:      5525062 ( 95.869%)
+      Block:            0 (  0.000%)
+    Replace:            0 (  0.000%)
+  Whitelist:       238087 (  4.131%)
+  Blacklist:            0 (  0.000%)
+     Ignore:            0 (  0.000%)
+      Retry:            0 (  0.000%)
+===============================================================================
+Frag3 statistics:
+        Total Fragments: 8
+      Frags Reassembled: 4
+               Discards: 0
+          Memory Faults: 0
+               Timeouts: 0
+               Overlaps: 0
+              Anomalies: 0
+                 Alerts: 0
+                  Drops: 0
+     FragTrackers Added: 4
+    FragTrackers Dumped: 4
+FragTrackers Auto Freed: 0
+    Frag Nodes Inserted: 8
+     Frag Nodes Deleted: 8
+===============================================================================
+===============================================================================
+Stream statistics:
+            Total sessions: 150015
+              TCP sessions: 113383
+              UDP sessions: 36632
+             ICMP sessions: 0
+               IP sessions: 0
+                TCP Prunes: 0
+                UDP Prunes: 0
+               ICMP Prunes: 0
+                 IP Prunes: 0
+TCP StreamTrackers Created: 115468
+TCP StreamTrackers Deleted: 115468
+              TCP Timeouts: 1054
+              TCP Overlaps: 648
+       TCP Segments Queued: 2923398
+     TCP Segments Released: 2923398
+       TCP Rebuilt Packets: 733825
+         TCP Segments Used: 2913195
+              TCP Discards: 13944
+                  TCP Gaps: 10689
+      UDP Sessions Created: 37433
+      UDP Sessions Deleted: 37433
+              UDP Timeouts: 801
+              UDP Discards: 0
+                    Events: 7911
+           Internal Events: 0
+           TCP Port Filter
+                  Filtered: 0
+                 Inspected: 0
+                   Tracked: 5597118
+           UDP Port Filter
+                  Filtered: 0
+                 Inspected: 0
+                   Tracked: 36632
+===============================================================================
+HTTP Inspect - encodings (Note: stream-reassembled packets included):
+    POST methods:                         89
+    GET methods:                          247162
+    HTTP Request Headers extracted:       247301
+    HTTP Request Cookies extracted:       245
+    Post parameters extracted:            87
+    HTTP response Headers extracted:      240743
+    HTTP Response Cookies extracted:      30685
+    Unicode:                              1191
+    Double unicode:                       0
+    Non-ASCII representable:              2148
+    Directory traversals:                 560
+    Extra slashes ("//"):                 2125
+    Self-referencing paths ("./"):        560
+    HTTP Response Gzip packets extracted: 97
+    Gzip Compressed Data Processed:       143765.00
+    Gzip Decompressed Data Processed:     470235.00
+    Http/2 Rebuilt Packets:               0
+    Total packets processed:              3439693
+===============================================================================
+SMTP Preprocessor Statistics
+  Total sessions                                    : 861
+  Max concurrent sessions                           : 3
+  Base64 attachments decoded                        : 20
+  Total Base64 decoded bytes                        : 802847
+  Quoted-Printable attachments decoded              : 30
+  Total Quoted decoded bytes                        : 4307680
+  UU attachments decoded                            : 0
+  Total UU decoded bytes                            : 0
+  Non-Encoded MIME attachments extracted            : 60
+  Total Non-Encoded MIME bytes extracted            : 100
+===============================================================================
+dcerpc2 Preprocessor Statistics
+  Total sessions: 1337
+  Total sessions autodetected: 2
+  Total sessions aborted: 2
+
+  Transports
+    SMB
+      Total sessions: 1335
+      Packet stats
+        Packets: 22913
+        Ignored bytes: 265141
+        Maximum outstanding requests: 2
+        SMB command requests/responses processed
+          Transaction (0x25) : 1460/0
+          Read AndX (0x2E) : 7/6
+          Write AndX (0x2F) : 8/8
+          Tree Disconnect (0x71) : 1460/1460
+          Negotiate (0x72) : 1335/1335
+          Session Setup AndX (0x73) : 2929/2929
+          Logoff AndX (0x74) : 1460/1460
+          Tree Connect AndX (0x75) : 1463/1463
+          Nt Create AndX (0xA2) : 3/3
+    SMB2
+      Smb2 prunes: 0
+      Memory used for smb2 processing: 0
+      Maximum memory used for smb2 processing: 0
+      SMB2 command requests/responses processed
+        smb2 create         : 0
+        smb2 write          : 0
+        smb2 read           : 0
+        smb2 set info       : 0
+        smb2 tree connect   : 0
+        smb2 tree disconnect: 0
+        smb2 close          : 0
+    TCP
+      Total sessions: 2
+      Packet stats
+        Packets: 2
+
+  DCE/RPC
+    Connection oriented
+      Packet stats
+        PDUs: 14
+          Bind: 3
+          Bind Ack: 3
+          Request: 3
+          Response: 0
+        Request fragments: 0
+        Response fragments: 0
+        Client PDU segmented reassembled: 1
+        Server PDU segmented reassembled: 1
+===============================================================================
+SSL Preprocessor:
+   SSL packets decoded: 61381
+          Client Hello: 14008
+          Server Hello: 14021
+           Certificate: 2618
+           Server Done: 29817
+   Client Key Exchange: 2616
+   Server Key Exchange: 0
+         Change Cipher: 27622
+              Finished: 0
+    Client Application: 13279
+    Server Application: 12077
+                 Alert: 21
+  Unrecognized records: 5362
+  Completed handshakes: 0
+        Bad handshakes: 0
+      Sessions ignored: 6615
+    Detection disabled: 5474
+===============================================================================
+SIP Preprocessor Statistics
+  Total sessions: 0
+===============================================================================
+Reputation Preprocessor Statistics
+  Total Memory Allocated: 717480
+===============================================================================
++-----------------------[filtered events]--------------------------------------
+| gen-id=1      sig-id=2001972    type=Both      tracking=src count=20  seconds=360 filtered=4
+| gen-id=1      sig-id=2010939    type=Limit     tracking=src count=5   seconds=60  filtered=2
+| gen-id=1      sig-id=2002087    type=Threshold tracking=src count=10  seconds=60  filtered=24
+| gen-id=1      sig-id=2010935    type=Limit     tracking=src count=5   seconds=60  filtered=2
+| gen-id=1      sig-id=2002383    type=Threshold tracking=dst count=5   seconds=300 filtered=10
+| gen-id=1      sig-id=2009159    type=Limit     tracking=src count=1   seconds=60  filtered=14
+| gen-id=1      sig-id=2002993    type=Both      tracking=src count=30  seconds=120 filtered=4
+| gen-id=1      sig-id=2001219    type=Both      tracking=src count=5   seconds=120 filtered=218
+| gen-id=1      sig-id=2002992    type=Both      tracking=src count=30  seconds=120 filtered=3182
+| gen-id=1      sig-id=2002911    type=Both      tracking=src count=5   seconds=60  filtered=54
+| gen-id=1      sig-id=2002994    type=Both      tracking=src count=30  seconds=60  filtered=289
+| gen-id=1      sig-id=2002995    type=Both      tracking=src count=30  seconds=60  filtered=4
+| gen-id=1      sig-id=2002910    type=Both      tracking=src count=5   seconds=60  filtered=35
+| gen-id=1      sig-id=2006402    type=Both      tracking=src count=1   seconds=300 filtered=4

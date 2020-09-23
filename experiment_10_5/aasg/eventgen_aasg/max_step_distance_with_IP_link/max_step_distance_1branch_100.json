@@ -1,0 +1,250 @@
+{
+  "aasgs": [
+    {
+      "nodes": [
+        {
+          "id": 0,
+          "e_star": [
+            {
+              "function": "EQL",
+              "att": "origin",
+              "r": "WS"
+            },
+            {
+              "function": "EQL",
+              "att": "service",
+              "r": "http"
+            },
+            {
+              "function": "EQL",
+              "att": "type",
+              "r": "GET"
+            },
+            {
+              "function": "EQL",
+              "att": "action",
+              "r": 3
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "e_star": [
+            {
+              "function": "EQL",
+              "att": "origin",
+              "r": "WS"
+            },
+            {
+              "function": "EQL",
+              "att": "service",
+              "r": "http"
+            },
+            {
+              "function": "EQL",
+              "att": "type",
+              "r": "GET"
+            },
+            {
+              "function": "EQL",
+              "att": "action",
+              "r": 7
+            },
+            {
+              "function": "SIM_EQL",
+              "attP": "ipsrc",
+              "attC": "ipsrc"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "e_star": [
+            {
+              "function": "EQL",
+              "att": "origin",
+              "r": "WS"
+            },
+            {
+              "function": "EQL",
+              "att": "service",
+              "r": "http"
+            },
+            {
+              "function": "EQL",
+              "att": "type",
+              "r": "GET"
+            },
+            {
+              "function": "EQL",
+              "att": "action",
+              "r": 9
+            },
+            {
+              "function": "SIM_EQL",
+              "attP": "ipsrc",
+              "attC": "ipsrc"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "e_star": [
+            {
+              "function": "EQL",
+              "att": "origin",
+              "r": "WS"
+            },
+            {
+              "function": "EQL",
+              "att": "service",
+              "r": "http"
+            },
+            {
+              "function": "EQL",
+              "att": "type",
+              "r": "GET"
+            },
+            {
+              "function": "EQL",
+              "att": "action",
+              "r": 2
+            },
+            {
+              "function": "SIM_EQL",
+              "attP": "ipsrc",
+              "attC": "ipsrc"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "e_star": [
+            {
+              "function": "EQL",
+              "att": "origin",
+              "r": "WS"
+            },
+            {
+              "function": "EQL",
+              "att": "service",
+              "r": "http"
+            },
+            {
+              "function": "EQL",
+              "att": "type",
+              "r": "GET"
+            },
+            {
+              "function": "EQL",
+              "att": "action",
+              "r": 2
+            },
+            {
+              "function": "SIM_EQL",
+              "attP": "ipsrc",
+              "attC": "ipsrc"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "e_star": [
+            {
+              "function": "EQL",
+              "att": "origin",
+              "r": "WS"
+            },
+            {
+              "function": "EQL",
+              "att": "service",
+              "r": "http"
+            },
+            {
+              "function": "EQL",
+              "att": "type",
+              "r": "GET"
+            },
+            {
+              "function": "EQL",
+              "att": "action",
+              "r": 2
+            },
+            {
+              "function": "SIM_EQL",
+              "attP": "ipsrc",
+              "attC": "ipsrc"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "e_star": [
+            {
+              "function": "EQL",
+              "att": "origin",
+              "r": "WS"
+            },
+            {
+              "function": "EQL",
+              "att": "service",
+              "r": "http"
+            },
+            {
+              "function": "EQL",
+              "att": "type",
+              "r": "GET"
+            },
+            {
+              "function": "EQL",
+              "att": "action",
+              "r": 2
+            },
+            {
+              "function": "SIM_EQL",
+              "attP": "ipsrc",
+              "attC": "ipsrc"
+            }
+          ]
+        }
+
+      ],
+      "id": 1,
+      "arcs": [
+        {
+          "start": 0,
+          "children": [
+            {
+              "id": 1
+            },
+            {
+              "id": 2
+            }
+          ]
+        },
+        {
+          "start": 1,
+          "children": [
+            {
+              "id": 3
+            },
+            {
+              "id": 4
+            }
+          ]
+        },
+        {
+          "start": 2,
+          "children": [
+            {
+              "id": 5
+            },
+            {
+              "id": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "aasgs": [
+    {
+      "nodes": [
+        {
+          "optional": false,
+          "id": 0,
+          "e_star": [
+            {
+              "function": "TXT",
+              "att": "type",
+              "r": "ICMP detected",
+              "threshold": 0.3
+            },
+            {
+              "function": "PFX",
+              "att": "ipdst",
+              "r": "192.168.0.0",
+              "threshold": 0.45
+            },
+            {
+              "function": "NEQ",
+              "att": "ipsrc",
+              "r": "192.168.5.122"
+            },
+            {
+              "function": "NEQ",
+              "att": "ipsrc",
+              "r": "192.168.5.123"
+            }
+          ]
+        },
+        {
+          "counter": 20,
+          "optional": false,
+          "id": 1,
+          "e_star": [
+            {
+              "function": "SIM_EQL",
+              "attC": "type",
+              "attP": "type"
+            },
+            {
+              "function": "SIM_EQL",
+              "attC": "ipsrc",
+              "attP": "ipsrc"
+            },
+            {
+              "function": "SIM_PFX",
+              "attC": "ipdst",
+              "attP": "ipdst",
+              "threshold": 0.75
+            },
+            {
+              "function": "SIM_NEQ",
+              "attC": "ipdst",
+              "attP": "ipdst"
+            }
+          ]
+        },
+        {
+          "counter": 20,
+          "optional": false,
+          "id": 2,
+          "e_star": [
+            {
+              "function": "SIM_EQL",
+              "attC": "type",
+              "attP": "type"
+            },
+            {
+              "function": "SIM_EQL",
+              "attC": "action",
+              "attP": "action"
+            },
+            {
+              "function": "SIM_EQL",
+              "attC": "ipsrc",
+              "attP": "ipsrc"
+            },
+            {
+              "function": "SIM_EQL",
+              "attC": "ipdst",
+              "attP": "ipdst"
+            },
+            {
+              "function": "SIM_NEQ",
+              "attC": "service",
+              "attP": "service"
+            },
+            {
+              "function": "SIM_EQL",
+              "attC": "psrc",
+              "attP": "psrc"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "e_star":[
+            {
+              "function": "SIM_EQL",
+              "attC": "ipsrc",
+              "attP": "ipsrc"
+            },
+            {
+              "function": "SIM_PFX",
+              "attC": "ipdst",
+              "attP": "ipdst",
+              "threshold": 0.75
+            },
+            {
+              "function": "TXT",
+              "att": "type",
+              "r": "SQL",
+              "threshold": 0.1
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "counter":20,
+          "e_star":[
+            {
+              "function": "SIM_EQL",
+              "attC": "ipsrc",
+              "attP": "ipsrc"
+            },
+            {
+              "function": "SIM_PFX",
+              "attC": "ipdst",
+              "attP": "ipdst",
+              "threshold": 0.75
+            },
+            {
+              "function": "TXT",
+              "att": "type",
+              "r": "failure SSH",
+              "threshold": 0.5
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "e_star":[
+            {
+              "function": "SIM_EQL",
+              "attC": "ipsrc",
+              "attP": "ipsrc"
+            },
+            {
+              "function": "SIM_PFX",
+              "attC": "ipdst",
+              "attP": "ipdst",
+              "threshold": 0.75
+            },
+            {
+              "function": "TXT",
+              "att": "type",
+              "r": "EXPLOIT Attempt",
+              "threshold": 0.1
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "e_star":[
+            {
+              "function": "SIM_NEQ",
+              "attC": "ipsrc",
+              "attP": "ipsrc"
+            },
+            {
+              "function": "SIM_PFX",
+              "attC": "ipdst",
+              "attP": "ipdst",
+              "threshold": 0.75
+            },
+            {
+              "function": "TXT",
+              "att": "type",
+              "r": "SQL",
+              "threshold": 0.1
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "counter":20,
+          "e_star":[
+            {
+              "function": "SIM_NEQ",
+              "attC": "ipsrc",
+              "attP": "ipsrc"
+            },
+            {
+              "function": "SIM_PFX",
+              "attC": "ipdst",
+              "attP": "ipdst",
+              "threshold": 0.75
+            },
+            {
+              "function": "TXT",
+              "att": "type",
+              "r": "failure SSH",
+              "threshold": 0.5
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "e_star":[
+            {
+              "function": "SIM_NEQ",
+              "attC": "ipsrc",
+              "attP": "ipsrc"
+            },
+            {
+              "function": "SIM_PFX",
+              "attC": "ipdst",
+              "attP": "ipdst",
+              "threshold": 0.75
+            },
+            {
+              "function": "TXT",
+              "att": "type",
+              "r": "EXPLOIT Attempt",
+              "threshold": 0.1
+            }
+          ]
+        }
+      ],
+      "id": 1,
+      "arcs": [
+        {
+          "start": 0,
+          "children": [
+            {
+              "id": 1
+            },
+            {
+              "id": 2
+            }
+          ]
+        },
+        {
+          "start": 1,
+          "children": [
+            {
+              "id": 3
+            },
+            {
+              "id": 4
+            },
+            {
+              "id": 5
+            }
+          ]
+        },
+        {
+          "start": 2,
+          "children": [
+            {
+              "id": 3
+            },
+            {
+              "id": 4
+            },
+            {
+              "id": 5
+            }
+          ]
+        },
+        {
+          "start": 3,
+          "children": [
+            {
+              "id": 6
+            },
+            {
+              "id": 7
+            },
+            {
+              "id": 8
+            }
+          ]
+        },
+        {
+          "start": 4,
+          "children": [
+            {
+              "id": 6
+            },
+            {
+              "id": 7
+            },
+            {
+              "id": 8
+            }
+          ]
+        },
+        {
+          "start": 5,
+          "children": [
+            {
+              "id": 6
+            },
+            {
+              "id": 7
+            },
+            {
+              "id": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

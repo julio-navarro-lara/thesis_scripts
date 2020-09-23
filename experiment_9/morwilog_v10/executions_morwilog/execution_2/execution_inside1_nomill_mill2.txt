@@ -1,0 +1,139 @@
+Reading logs...
+Read 885 logs
+../../datasets/darpa2000/simplified_parsed_v3/No_attack1_inside1_events_simplified_parsed_v3.csv
+Reading AASGs...
+Read 1 AASGs
+../aasg/mill2_test_darpa2000_aasg.json
+{'p_initial_ph': 1000.0, 'p_minimum_ph': 100.0, 'p_omega': 1000.0, 'p_t_max': 1200, 'p_delta_ph_0': 500.0, 'p_evap_rate': 0.02, 'p_minimum_ph_attack': 200.0}
+67430,1005365572.0,nan,nan,202.077.162.213,172.016.112.010,Sadmind_Amslverify_Overflow,nan,nan,60519,32774,nan,nan
+
+
+There is match
+67430,1005365572.0,nan,nan,202.077.162.213,172.016.112.010,Sadmind_Amslverify_Overflow,nan,nan,60519,32774,nan,nan
+67562,1005366534.0,nan,nan,202.077.162.213,172.016.112.010,Rsh,nan,nan,1023,514,nan,nan
+[327, 442]
+67554,1005366550.0,nan,nan,172.016.112.050,255.255.255.255,Mstream_Zombie,nan,nan,34459,9325,nan,nan
+[327, 442, 451]
+67428,1005365574.0,nan,nan,202.077.162.213,172.016.112.010,Sadmind_Amslverify_Overflow,nan,nan,60524,32774,nan,nan
+
+
+There is match
+67428,1005365574.0,nan,nan,202.077.162.213,172.016.112.010,Sadmind_Amslverify_Overflow,nan,nan,60524,32774,nan,nan
+67562,1005366534.0,nan,nan,202.077.162.213,172.016.112.010,Rsh,nan,nan,1023,514,nan,nan
+[328, 442]
+67554,1005366550.0,nan,nan,172.016.112.050,255.255.255.255,Mstream_Zombie,nan,nan,34459,9325,nan,nan
+[328, 442, 451]
+67442,1005365581.0,nan,nan,202.077.162.213,172.016.112.010,Sadmind_Amslverify_Overflow,nan,nan,60542,32774,nan,nan
+
+
+There is match
+67442,1005365581.0,nan,nan,202.077.162.213,172.016.112.010,Sadmind_Amslverify_Overflow,nan,nan,60542,32774,nan,nan
+67538,1005366517.0,nan,nan,172.016.112.010,202.077.162.213,Rsh,nan,nan,1023,514,nan,nan
+[331, 436]
+67554,1005366550.0,nan,nan,172.016.112.050,255.255.255.255,Mstream_Zombie,nan,nan,34459,9325,nan,nan
+[331, 436, 451]
+67438,1005365583.0,nan,nan,202.077.162.213,172.016.112.010,Sadmind_Amslverify_Overflow,nan,nan,60549,32774,nan,nan
+
+
+There is match
+67438,1005365583.0,nan,nan,202.077.162.213,172.016.112.010,Sadmind_Amslverify_Overflow,nan,nan,60549,32774,nan,nan
+67538,1005366517.0,nan,nan,172.016.112.010,202.077.162.213,Rsh,nan,nan,1023,514,nan,nan
+[332, 436]
+67554,1005366550.0,nan,nan,172.016.112.050,255.255.255.255,Mstream_Zombie,nan,nan,34459,9325,nan,nan
+[332, 436, 451]
+67440,1005365585.0,nan,nan,202.077.162.213,172.016.112.050,Sadmind_Amslverify_Overflow,nan,nan,60569,32773,nan,nan
+
+
+There is match
+67440,1005365585.0,nan,nan,202.077.162.213,172.016.112.050,Sadmind_Amslverify_Overflow,nan,nan,60569,32773,nan,nan
+67558,1005366534.0,nan,nan,172.016.112.050,202.077.162.213,Rsh,nan,nan,1023,514,nan,nan
+[335, 441]
+67554,1005366550.0,nan,nan,172.016.112.050,255.255.255.255,Mstream_Zombie,nan,nan,34459,9325,nan,nan
+[335, 441, 451]
+67436,1005365587.0,nan,nan,202.077.162.213,172.016.112.050,Sadmind_Amslverify_Overflow,nan,nan,60578,32773,nan,nan
+
+
+There is match
+67436,1005365587.0,nan,nan,202.077.162.213,172.016.112.050,Sadmind_Amslverify_Overflow,nan,nan,60578,32773,nan,nan
+67558,1005366534.0,nan,nan,172.016.112.050,202.077.162.213,Rsh,nan,nan,1023,514,nan,nan
+[337, 441]
+67563,1005366534.0,nan,nan,172.016.112.010,255.255.255.255,Mstream_Zombie,nan,nan,32826,9325,nan,nan
+[337, 441, 443]
+67432,1005365593.0,nan,nan,202.077.162.213,172.016.112.050,Sadmind_Amslverify_Overflow,nan,nan,60605,32773,nan,nan
+
+
+There is match
+67432,1005365593.0,nan,nan,202.077.162.213,172.016.112.050,Sadmind_Amslverify_Overflow,nan,nan,60605,32773,nan,nan
+67558,1005366534.0,nan,nan,172.016.112.050,202.077.162.213,Rsh,nan,nan,1023,514,nan,nan
+[338, 441]
+67554,1005366550.0,nan,nan,172.016.112.050,255.255.255.255,Mstream_Zombie,nan,nan,34459,9325,nan,nan
+[338, 441, 451]
+67434,1005365595.0,nan,nan,202.077.162.213,172.016.112.050,Sadmind_Amslverify_Overflow,nan,nan,60619,32773,nan,nan
+
+
+There is match
+67434,1005365595.0,nan,nan,202.077.162.213,172.016.112.050,Sadmind_Amslverify_Overflow,nan,nan,60619,32773,nan,nan
+67553,1005366550.0,nan,nan,202.077.162.213,172.016.112.050,Rsh,nan,nan,1023,514,nan,nan
+[341, 450]
+67554,1005366550.0,nan,nan,172.016.112.050,255.255.255.255,Mstream_Zombie,nan,nan,34459,9325,nan,nan
+[341, 450, 451]
+*********
+Alert
+1005366550.0
+Position 451
+[67430, 67562, 67554]
+[0, 5, 8]
+[327, 442, 451]
+*********
+Alert
+1005366550.0
+Position 451
+[67428, 67562, 67554]
+[0, 5, 8]
+[328, 442, 451]
+*********
+Alert
+1005366550.0
+Position 451
+[67442, 67538, 67554]
+[0, 6, 8]
+[331, 436, 451]
+*********
+Alert
+1005366550.0
+Position 451
+[67438, 67538, 67554]
+[0, 6, 8]
+[332, 436, 451]
+*********
+Alert
+1005366550.0
+Position 451
+[67440, 67558, 67554]
+[0, 6, 9]
+[335, 441, 451]
+*********
+Alert
+1005366550.0
+Position 451
+[67436, 67558, 67563]
+[0, 6, 8]
+[337, 441, 443]
+*********
+Alert
+1005366550.0
+Position 451
+[67432, 67558, 67554]
+[0, 6, 9]
+[338, 441, 451]
+*********
+Alert
+1005367762.0
+Position 574
+[67434, 67553, 67554]
+[0, 5, 9]
+[341, 450, 451]
+Number of alerts:
+8
+Execution time (seconds):
+1.26202607155

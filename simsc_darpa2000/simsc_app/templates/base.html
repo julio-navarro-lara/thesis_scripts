@@ -1,0 +1,100 @@
+<!-- djangotemplates/example/templates/base.html -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>
+      SimSC - {% block title %}{% endblock %}
+    </title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="{% static 'vendor/datatables/dataTables.bootstrap4.css' %}" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
+
+    <!--BOKEH-->
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.9.min.css" rel="stylesheet">
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.9.min.css" rel="stylesheet">
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.9.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="fixed-nav sticky-footer bg-dark" id="page-top">
+      <!-- Navigation-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <a class="navbar-brand" href="{% url 'link_main' %}">SimSC</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="ExpFields">
+            </li>
+          </ul>
+          <ul class="navbar-nav sidenav-toggler">
+            <li class="nav-item">
+              <a class="nav-link text-center" id="sidenavToggler">
+                <i class="fa fa-fw fa-angle-left"></i>
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+
+          </ul>
+        </div>
+      </nav>
+      <div class="content-wrapper">
+        <div class="container-fluid">
+          <!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+            </li>
+            <li class="breadcrumb-item"></li>
+          </ol>
+          {% block pagecontent %}
+          {% endblock %}
+        </div>
+      </div>
+      <footer class="sticky-footer">
+        <div class="container">
+          <div class="text-center">
+            <small>Copyright © Julio Navarro 2017</small>
+          </div>
+        </div>
+      </footer>
+      <!-- Bootstrap core JavaScript-->
+      <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+      <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <!-- Core plugin JavaScript-->
+      <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+      <!-- Page level plugin JavaScript-->
+      <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
+      <script src="{% static 'vendor/datatables/jquery.dataTables.js' %}"></script>
+      <script src="{% static 'vendor/datatables/dataTables.bootstrap4.js' %}"></script>
+      <!--BOKEH-->
+      <!--<script src="{% static 'vendor/bokeh/bokeh-0.12.9.min.js' %}"></script>
+      <script src="{% static 'vendor/bokeh/bokeh-widgets-0.12.9.min.js' %}"></script>
+      <script src="{% static 'vendor/bokeh/bokeh-tables-0.12.9.min.js' %}"></script>-->
+      <!-- Custom scripts for all pages-->
+      <script src="{% static 'js/sb-admin.min.js' %}"></script>
+      <!-- Custom scripts for this page-->
+      <script src="{% static 'js/sb-admin-datatables.min.js' %}"></script>
+      <script src="{% static 'js/sb-admin-charts.min.js' %}"></script>
+      <script src="{% static 'js/d3.min.js' %}"></script>
+
+      {% block javascript %}
+      {% endblock %}
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,50 @@
+Primera impresión IMPORTANTE: Los timestamps de las alertas de RealSecure de Ning no se
+corresponden con el timestamp original de los eventos registrados por DARPA. Quizás es que
+RealSecure no tiene una puta opción para esto. Bueno, sea como fuere, eso hace que todos los
+eventos de inside1 tengan una fecha posterior a dmz1... No podemos a priori combinar ambos
+set de datos. Sin embargo, hay una instancia completa del ataque en inside1. Vamos a utilizar
+sólo este dataset. El análisis que vamos a incluir a continuación sí considera las alertas de
+todos.
+
+First step: no alerts, because RealSecure ignores the Pings
+
+Second step: Sadmind_Ping on the found machines, always associated with an Admind
+This is like that because admind only signals a insecure authentication in admind daemon
+
+Attacker:
+202.077.162.213
+
+Probed Machines:
+172.016.115.020 - Mill
+172.016.114.010 - Plato
+172.016.112.050 - Pascal
+172.016.114.030 - Solomon
+172.016.114.020 - Smith
+172.016.112.010 - Locke
+
+
+The attacker changes the parameters for each execution, but we do not know how
+
+Third step: Now we have alerts Sadmind_Amslverify_Overflow, each one associated
+with an Admind alert.
+There is a weird thing: an alert UDP_Port_Scan que responde la máquina 172.016.112.050
+
+The machines attacked are the same as the machines probed... that can mean two things:
+- The alert Sadmind_Ping is trigger only when the probe is successful because there is sadmind
+- the attacker was a genius and knew which machine he had to probe...
+
+We deduce that the attacker is only successful only in the following machines:
+172.016.115.020 - Mill
+172.016.114.010 - Plato
+172.016.112.050 - Pascal
+172.016.112.010 - Locke
+
+Because for the others there is no continuation in the alerts
+
+Attacker:
+202.077.162.213
+
+Fourth step: This step is more complicated, because there are more actions done by the attacker
+There are Rsh, Telnet, Mstream_Zombie
+
+Fifth step: Only in inside1

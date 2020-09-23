@@ -1,0 +1,88 @@
+<!-- djangotemplates/example/templates/index.html -->
+
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Automatic extraction{% endblock %}</title>
+</head>
+<body>
+  {% block pagecontent %}
+  <div class="card mb-3">
+    <div class="card-header">
+      <i class="fa fa-table"></i> Analysis SimSC</div>
+    <div class="card-body">
+    <form name="input_form" onsubmit="return OnSubmitForm();" enctype="multipart/form-data" method="post">
+        <p>
+          {% csrf_token %}
+        <input id="log_file" type="file" name="log_file">
+        </p>
+        <p>
+          Common IP addresses:
+        <input id="n_commonip" name="n_commonip" type="number" value=2>
+        </p>
+        <p>
+          Max time difference (seconds):
+        <input id="n_timedif" name="n_timedif" type="number" value=6>
+        </p>
+        <p>
+        <input type="radio" name="visualization" value="1" checked> Graph<br>
+        <input type="radio" name="visualization" value="2"> Statistics<br>
+        </p>
+        <input type="submit" value="Launch Analysis">
+    </form>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-header">
+      <i class="fa fa-table"></i> Log format</div>
+    <div class="card-body">
+      <p>The input is a text file with each row representing a log</p>
+    </div>
+  </div>
+
+  <div class="card mb-3">
+    <div class="card-header">
+      <i class="fa fa-table"></i> Explanation API</div>
+    <div class="card-body">
+      <p>To directly use the SimSC API, you have to send a POST with the following elements:
+      <ul>
+        <li><b>n_commonip</b> // A number indicating the number of common IP addresses to create the links.</li>
+        <li><b>n_timedif</b> // A number indicating the maximum time difference for the algorithm.</li>
+        <li><b>log_file</b> // A file with the logs in the format described above.</li>
+      </ul>
+      </p>
+      <p>The requests can be sent to two URLs depending on the required visualization:
+      <ul>
+        <li>/graph/</li>
+        <li>/stats/</li>
+      </ul>
+      </p>
+      <p>&nbsp;</p>
+    </div>
+  </div>
+
+  {% endblock %}
+  {% block javascript %}
+  <script type="text/javascript">
+    function OnSubmitForm()
+    {
+      if(document.input_form.visualization[0].checked == true)
+      {
+        document.input_form.action ="{% url 'link_graph' %}";
+      }
+      else
+        if(document.input_form.visualization[1].checked == true)
+        {
+          document.input_form.action ="{% url 'link_stats' %}";
+        }
+        return true;
+    }
+  </script>
+  <script type="text/javascript">
+  </script>
+  {% endblock %}
+</body>
+</html>

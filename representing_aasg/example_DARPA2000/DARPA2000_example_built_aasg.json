@@ -1,0 +1,98 @@
+{
+  "aasgs": [
+    {
+      "id": 1,
+      "nodes": [
+        {"id": 0,
+          "e_star": [
+            {"function": "EQL","att": "type","r": "Sadmind_Ping"}
+          ]
+        },
+        {"id": 1,
+          "e_star": [
+            {"function": "SET","att": "type",
+              "r": ["Sadmind_Amslverify_Overflow","Admind"]},
+            {"function": "SIM_EQL","attC": "ipsrc","attP": "ipsrc"},
+            {"function": "SIM_EQL","attC": "ipdst","attP": "ipdst"}
+          ]
+        },
+        {"id": 2,
+          "e_star": [
+            {"function": "EQL","att": "type","r": "Sadmind_Amslverify_Overflow"},
+            {"function": "SIM_EQL","attC": "ipsrc","attP": "ipsrc"},
+            {"function": "SIM_EQL","attC": "ipdst","attP": "ipdst"}
+          ],
+          "counter": 6
+        },
+        {"id": 3,
+          "e_star": [
+            {"function": "SET","att": "type",
+              "r": ["Sadmind_Amslverify_Overflow","Admind"]},
+            {"function": "SIM_NEQ","attC": "type","attP": "type"},
+            {"function": "SIM_EQL","attC": "ipsrc","attP": "ipsrc"},
+            {"function": "SIM_EQL","attC": "ipdst","attP": "ipdst"}
+          ]
+        },
+        {"id": 4,
+          "e_star": [
+            {"function": "EQL","att": "type","r": "TelnetTerminaltype"},
+            {"function": "SIM_EQL","attC": "ipdst","attP": "ipdst"}
+          ]
+        },
+        {"id": 5,
+          "e_star": [
+            {"function": "EQL","att": "type","r": "Rsh"},
+            {"function": "SIM_EQL","attC": "ipdst","attP": "ipdst"},
+            {"function": "SIM_EQL","attC": "ipsrc","attP": "ipsrc"}
+          ]
+        },
+        {"id": 6,
+          "e_star": [
+            {"function": "EQL","att": "type","r": "Rsh"},
+            {"function": "SIM_EQL","attC": "ipdst","attP": "ipsrc"},
+            {"function": "SIM_EQL","attC": "ipsrc","attP": "ipdst"}
+          ]
+        },
+        {"id": 7,
+          "e_star": [
+            {"function": "EQL","att": "type","r": "TelnetTerminaltype"},
+            {"function": "SIM_EQL","attC": "ipdst","attP": "ipdst"}
+          ],
+          "optional": true
+        },
+        {"id": 8,
+          "e_star": [
+            {"function": "EQL","att": "type","r": "Mstream_Zombie"},
+            {"function": "SIM_EQL","attC": "ipdst","attP": "ipdst"},
+            {"function": "SIM_EQL","attC": "ipsrc","attP": "ipsrc"}
+          ]
+        },
+        {"id": 9,
+          "e_star": [
+            {"function": "EQL","att": "type","r": "Mstream_Zombie"},
+            {"function": "EQL","att": "ipdst","r": "255.255.255.255"},
+            {"function": "SIM_EQL","attC": "ipsrc","attP": "ipsrc"}
+          ]
+        }
+      ],
+      "arcs": [
+        {"start": 0,
+          "children": [{"id": 1},{"id": 2}]},
+        {"start": 1,
+          "children": [{"id": 3}]},
+        {"start": 2,
+          "children": [{"id": 4}]},
+        {"start": 3,
+          "children": [{"id": 5},{"id": 6}]},
+        {"start": 4,
+          "children": [{"id": 5},{"id": 6}]},
+        {"start": 5,
+          "children": [{"id": 7}]},
+        {"start": 6,
+          "children": [{"id": 7}]},
+        {"start": 7,
+          "children": [{"id": 8},{"id": 9}]},
+        ]
+    }
+  ]
+}

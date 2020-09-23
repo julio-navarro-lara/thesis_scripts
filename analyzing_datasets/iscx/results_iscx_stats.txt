@@ -1,0 +1,230 @@
+Statistics come from the full dataset but logs come from the aggregated.
+
+Summary by step:
+1- Email with attached exploit
+We cannot detect it in the network. It happens locally in the computer, as it is signaled by 14_Ahmed
+
+2- Reverse TCP shell
+We cannot detect it either. It does not generate an alert. There is no alert with port number 555
+
+3- NMAP scan 1.105 to 2.0
+The scan is not in the logs. Impossible.
+There are no alerts going from 192.168.1.105 to any of the IP addresses in 192.168.1.0 or 192.168.2.0...
+
+4- Vulnerability exploitation in 2.112
+We cannot detect it either
+
+5- Second scan by 2.112
+This is an ICMP scan that is easily detected.
+We can implement it with counters
+
+6- SQL injection through 2.112
+Also detected by SQL alerts
+
+7- Backdoor
+I do not know exactly. There are some weird alerts to 5.122...
+It is the attacker! 142.167.88.44 once the backdoor has been established
+
+Sequence of logs:
+5- Second scan by 2.112
+FROM 17675,1497380315.0,192.168.2.112,192.168.5.1,ICMP test detected,
+TO 17986,1497380317.0,192.168.2.112,192.168.5.182,ICMP test detected,
+All the alerts are next to each others. The scanned IP addresses are of 192.168.5.0\24
+It is clear for the scan:
+ - Equality of IP source
+ - Equality of type
+ - Prefix similarity of destination
+ - Counters (maybe 10?)
+
+6- SQL injection through 2.112
+Here we can find some different alerts (I take only the ones going against 192.168.5.123)
+18691,1497380320.0,192.168.2.112,192.168.5.123,ET POLICY Suspicious inbound to mySQL port 3306,53508,3306,
+
+18694,1497380320.0,192.168.2.112,192.168.5.123,ET DOS Microsoft Remote Desktop (RDP) Syn then Reset 30 Second DoS Attempt,53508,3389,
+
+18696,1497380320.0,192.168.2.112,192.168.5.123,ET SCAN Potential VNC Scan 5800-5820,53508,5802,
+This is a scan to check the open connections supposing that the server is VNC (virtual server en virtual network)
+
+18697,1497380320.0,192.168.2.112,192.168.5.123,ET POLICY Suspicious inbound to MSSQL port 1433,53508,1433,
+18700,1497380320.0,192.168.2.112,192.168.5.123,ET POLICY Suspicious inbound to Oracle SQL port 1521,53508,1521,
+18703,1497380320.0,192.168.2.112,192.168.5.123,ET POLICY Suspicious inbound to PostgreSQL port 5432,53508,5432,
+It seems that here the attacker test different types of SQL servers...
+
+This alerts indicate that the attacker is getting the access via xp_cmdshell
+19174,1497383246.0,192.168.2.112,192.168.5.123,ET WEB_SERVER Possible SQLi xp_cmdshell POST body,3638,80,
+19240,1497383506.0,192.168.2.112,192.168.5.123,ET WEB_SERVER Possible SQLi xp_cmdshell POST body,3641,80,
+19293,1497383654.0,192.168.2.112,192.168.5.123,ET WEB_SERVER Possible SQLi xp_cmdshell POST body,3643,80,
+19304,1497383680.0,192.168.2.112,192.168.5.123,ET WEB_SERVER Possible SQLi xp_cmdshell POST body,3643,80,
+19354,1497383999.0,192.168.2.112,192.168.5.123,ET WEB_SERVER Possible SQLi xp_cmdshell POST body,3647,80,
+19363,1497384065.0,192.168.2.112,192.168.5.123,ET WEB_SERVER Possible SQLi xp_cmdshell POST body,3648,80,
+19364,1497384082.0,192.168.2.112,192.168.5.123,ET WEB_SERVER Possible SQLi xp_cmdshell POST body,3648,80,
+
+7- Backdoor
+The connection itself through the 2.112 is not represented.
+
+There is also a SCAN done from the 112 and some other computers
+22760,1497405591.0,192.168.2.112,192.168.5.122,ET SCAN Potential SSH Scan,3875,22,
+22762,1497405596.0,192.168.4.118,192.168.5.122,ET SCAN Potential SSH Scan,3967,22,
+22763,1497405596.0,192.168.3.115,192.168.5.122,ET SCAN Potential SSH Scan,2786,22,
+
+What is clear is that the 2.112 is not involved anymore.
+And the access through the backdoor allows the attacker to perform attacks not only to 5.123, but also to 5.122. In fact, this is what she does
+
+I would put in this step all the attacks made by the attacker against 5.123
+The attacker 142.167.88.44
+
+So we do not have logs indicating the creation of the backdoor but we do have logs indicating the use of the backdoor.
+And that can be coded in an AASG.
+
+21858,1497401399.0,142.167.88.44,192.168.5.122,ET FTP Suspicious Quotation Mark Usage in FTP Username,61389,21,
+21859,1497401399.0,142.167.88.44,192.168.5.122,ET FTP Suspicious Percentage Symbol Usage in FTP Username,61389,21,
+21874,1497401414.0,142.167.88.44,192.168.5.122,ET FTP Suspicious Quotation Mark Usage in FTP Username,61407,21,
+21959,1497401515.0,142.167.88.44,192.168.5.122,ET EXPLOIT HP OpenView Network Node Manager Toolbar.exe CGI Buffer Overflow Attempt,61506,80,
+21929,1497401498.0,142.167.88.44,192.168.5.122,ET EXPLOIT Wscript Shell Run Attempt - Likely Hostile,61447,80,
+
+21987,1497401531.0,142.167.88.44,192.168.5.122,ET SHELLCODE Rothenburg Shellcode,61552,143,
+21988,1497401531.0,192.168.5.122,142.167.88.44,ET SHELLCODE Rothenburg Shellcode,143,61552,
+
+---------
+NOTHING
+Between these two hosts there are weird commands, but they are not involved
+142.167.88.44,192.168.5.122
+2 (IMAP) Unknown IMAP4 command
+1 (POP) Unknown POP3 command
+1 (ftp_telnet) Invalid FTP Command
+13 (ftp_telnet) TELNET CMD on FTP Command Channel
+
+Server 192.168.5.122,
+1 (http_inspect) NON-RFC DEFINED CHAR
+4 (http_inspect) POST W/O CONTENT-LENGTH OR CHUNKS
+8 (http_inspect) SIMPLE REQUEST
+4 (http_inspect) UNESCAPED SPACE IN HTTP URI
+3 (spp_ssh) Protocol mismatch
+31 INDICATOR-SHELLCODE Shikata Ga Nai x86 polymorphic shellcode decoder detected
+30 ET POLICY GNU/Linux APT User-Agent Outbound likely related to package management
+1 ET POLICY Incoming Basic Auth Base64 HTTP Password detected unencrypted
+6052,1497353869.0,61.147.67.206,192.168.5.122,ET SCAN Toata Scanner User-Agent Detected,34562,80,
+
+Computers that should not be involved
+15 ET SCAN Potential SSH Scan
+
+*************
+SOMETHING
+10 (http_inspect) JAVASCRIPT WHITESPACES EXCEEDS MAX ALLOWED
+6163,1497354049.0,195.86.39.11,192.168.1.105,(http_inspect) JAVASCRIPT WHITESPACES EXCEEDS MAX ALLOWED,80,46340,
+8404,1497355571.0,198.105.195.87,192.168.1.105,(http_inspect) JAVASCRIPT WHITESPACES EXCEEDS MAX ALLOWED,80,46983,
+10889,1497357280.0,195.86.39.11,192.168.1.105,(http_inspect) JAVASCRIPT WHITESPACES EXCEEDS MAX ALLOWED,80,49009,
+
+25 (http_inspect) OVERSIZE REQUEST-URI DIRECTORY
+13693,1497360312.0,192.168.1.105,216.239.116.48,(http_inspect) OVERSIZE REQUEST-URI DIRECTORY,52944,80,
+
+7351,1497355161.0,64.27.53.234,192.168.1.105,(http_inspect) SERVER CONSECUTIVE SMALL CHUNK SIZES,80,46804,
+10647,1497357109.0,124.198.191.30,192.168.1.105,(http_inspect) SERVER CONSECUTIVE SMALL CHUNK SIZES,80,48607,
+12236,1497358847.0,212.58.226.77,192.168.1.105,(http_inspect) SERVER CONSECUTIVE SMALL CHUNK SIZES,80,50713,
+
+6217,1497354065.0,192.168.1.105,82.98.86.180,(http_inspect) LONG HEADER,46460,80,
+12550,1497359126.0,192.168.2.112,82.98.86.172,(http_inspect) LONG HEADER,2500,80,
+12669,1497359240.0,192.168.2.112,82.98.86.172,(http_inspect) LONG HEADER,2536,80,
+12750,1497359292.0,192.168.2.112,82.98.86.172,(http_inspect) LONG HEADER,2595,80,
+
+7359,1497355164.0,192.168.2.112,64.202.188.33,(http_inspect) UNKNOWN METHOD,4938,80,
+7486,1497355198.0,192.168.2.112,64.202.167.128,(http_inspect) UNKNOWN METHOD,1044,80,
+
+6305,1497354092.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",4577,80,
+6347,1497354107.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",4577,80,
+6436,1497354135.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",4577,80,
+6591,1497354193.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",4577,80,
+8117,1497355446.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",1060,80,
+8126,1497355454.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",1060,80,
+8160,1497355469.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",1060,80,
+8206,1497355499.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",1060,80,
+8774,1497355731.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",1248,80,
+10422,1497356968.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",1701,80,
+10874,1497357267.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",1774,80,
+10886,1497357278.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",1774,80,
+11366,1497357799.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",2071,80,
+11391,1497357821.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",2071,80,
+
+11809,1497358386.0,198.105.193.76,192.168.1.105,"Bad segment, adjusted size <= 0",80,50082,
+
+12279,1497358873.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",2402,80,
+12294,1497358890.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",2402,80,
+12329,1497358912.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",2402,80,
+12941,1497359497.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",2647,80,
+12957,1497359517.0,192.168.2.112,68.178.178.97,"Bad segment, adjusted size <= 0",2647,80,
+
+[17675,1497380315.0,192.168.2.112,192.168.5.0\24,ICMP test detected,
+
+Trying to attempt exploits against the servers
+18690,1497380320.0,192.168.2.112,192.168.5.122,ET POLICY Suspicious inbound to mySQL port 3306,53508,3306,
+18691,1497380320.0,192.168.2.112,192.168.5.123,ET POLICY Suspicious inbound to mySQL port 3306,53508,3306,
+18692,1497380320.0,192.168.2.112,192.168.5.124,ET POLICY Suspicious inbound to mySQL port 3306,53508,3306,
+18693,1497380320.0,192.168.2.112,192.168.5.1,ET POLICY Suspicious inbound to mySQL port 3306,53508,3306,
+18694,1497380320.0,192.168.2.112,192.168.5.123,ET DOS Microsoft Remote Desktop (RDP) Syn then Reset 30 Second DoS Attempt,53508,3389,
+18695,1497380320.0,192.168.2.112,192.168.5.122,ET SCAN Potential VNC Scan 5900-5920,53508,5901,
+18696,1497380320.0,192.168.2.112,192.168.5.123,ET SCAN Potential VNC Scan 5800-5820,53508,5802,
+18697,1497380320.0,192.168.2.112,192.168.5.123,ET POLICY Suspicious inbound to MSSQL port 1433,53508,1433,
+18698,1497380320.0,192.168.2.112,192.168.5.124,ET POLICY Suspicious inbound to MSSQL port 1433,53508,1433,
+18699,1497380320.0,192.168.2.112,192.168.5.122,ET POLICY Suspicious inbound to MSSQL port 1433,53508,1433,
+18700,1497380320.0,192.168.2.112,192.168.5.123,ET POLICY Suspicious inbound to Oracle SQL port 1521,53508,1521,
+18701,1497380320.0,192.168.2.112,192.168.5.124,ET POLICY Suspicious inbound to Oracle SQL port 1521,53508,1521,
+18702,1497380320.0,192.168.2.112,192.168.5.122,ET POLICY Suspicious inbound to Oracle SQL port 1521,53508,1521,
+18703,1497380320.0,192.168.2.112,192.168.5.123,ET POLICY Suspicious inbound to PostgreSQL port 5432,53508,5432,
+18704,1497380320.0,192.168.2.112,192.168.5.124,ET POLICY Suspicious inbound to PostgreSQL port 5432,53508,5432,
+18705,1497380320.0,192.168.2.112,192.168.5.122,ET POLICY Suspicious inbound to PostgreSQL port 5432,53508,5432,
+18706,1497380347.0,192.168.2.112,192.168.5.1,ET POLICY Suspicious inbound to MSSQL port 1433,53508,1433,
+18708,1497380356.0,192.168.2.112,192.168.5.1,ET POLICY Suspicious inbound to Oracle SQL port 1521,53508,1521,
+18709,1497380357.0,192.168.2.112,192.168.5.1,ET POLICY Suspicious inbound to PostgreSQL port 5432,53508,5432,
+18711,1497380370.0,198.164.30.2,192.168.5.122,PROTOCOL-DNS TMG Firewall Client long host entry exploit attempt,53,23314,
+18712,1497380370.0,198.164.30.2,192.168.5.122,PROTOCOL-DNS potential dns cache poisoning attempt - mismatched txid,53,14510,
+
+Capture of the computer?? I think that the Backdoor is not made against 2.112
+Here there is a final attack that has maybe something to do with it... at least the IP 142.167.88.44 is attacking
+But the problem is that we do not have this IP address before. I think it is the attacker once she has established the tunnel
+21858,1497401399.0,142.167.88.44,192.168.5.122,ET FTP Suspicious Quotation Mark Usage in FTP Username,61389,21,
+21859,1497401399.0,142.167.88.44,192.168.5.122,ET FTP Suspicious Percentage Symbol Usage in FTP Username,61389,21,
+21874,1497401414.0,142.167.88.44,192.168.5.122,ET FTP Suspicious Quotation Mark Usage in FTP Username,61407,21,
+21959,1497401515.0,142.167.88.44,192.168.5.122,ET EXPLOIT HP OpenView Network Node Manager Toolbar.exe CGI Buffer Overflow Attempt,61506,80,
+21929,1497401498.0,142.167.88.44,192.168.5.122,ET EXPLOIT Wscript Shell Run Attempt - Likely Hostile,61447,80,
+
+21987,1497401531.0,142.167.88.44,192.168.5.122,ET SHELLCODE Rothenburg Shellcode,61552,143,
+21988,1497401531.0,192.168.5.122,142.167.88.44,ET SHELLCODE Rothenburg Shellcode,143,61552,
+
+PoTential attacker: 142.167.88.44
+
+3509 (ftp_telnet) FTP command parameters were too long
+1468 (http_inspect) INVALID CONTENT-LENGTH OR CHUNK SIZE
+3515 (http_inspect) NO CONTENT-LENGTH OR TRANSFER-ENCODING IN HTTP RESPONSE
+3284 (spp_sdf) SDF Combination Alert
+2603 Consecutive TCP small segments exceeding threshold
+
+
+
+1 ET POLICY Python-urllib/ Suspicious User Agent
+5 ET POLICY Suspicious inbound to MSSQL port 1433
+4 ET POLICY Suspicious inbound to Oracle SQL port 1521
+5 ET POLICY Suspicious inbound to PostgreSQL port 5432
+4 ET POLICY Suspicious inbound to mySQL port 3306
+2 ET SCAN Potential FTP Brute-Force attempt response
+
+2 ET SHELLCODE Rothenburg Shellcode
+1 ET TROJAN Double HTTP/1.1 Header Inbound - Likely Hostile Traffic
+5 ET WEB_SERVER /bin/sh In URI Possible Shell Command Execution Attempt
+1 ET WEB_SERVER HP OpenView Network Node Manager OvWebHelp.exe Heap Buffer Overflow Attempt
+17 ET WEB_SERVER HTTP 414 Request URI Too Large
+1 ET WEB_SERVER HTTP POST Generic eval of base64_decode
+1 ET WEB_SERVER PHP tags in HTTP POST
+1 ET WEB_SERVER Possible Cookie Based BackDoor Used in Drupal Attacks
+1 ET WEB_SERVER Possible DD-WRT Metacharacter Injection Command Execution Attempt
+7 ET WEB_SERVER Possible SQLi xp_cmdshell POST body
+1 ET WEB_SERVER SQL Errors in HTTP 200 Response (SqlException)
+1 ET WEB_SPECIFIC_APPS Possible HP Power Manager Management Web Server Login Remote Buffer Overflow Attempt
+1028 ICMP test detected
+
+3 Limit on number of overlapping TCP packets reached
+3423 PROTOCOL-DNS TMG Firewall Client long host entry exploit attempt
+2 PROTOCOL-DNS domain not found containing random-looking hostname - possible DGA detected
+3206 PROTOCOL-DNS potential dns cache poisoning attempt - mismatched txid
+422 Reset outside window
+1 SERVER-WEBAPP JBoss JMX console access attempt
+Size: 57

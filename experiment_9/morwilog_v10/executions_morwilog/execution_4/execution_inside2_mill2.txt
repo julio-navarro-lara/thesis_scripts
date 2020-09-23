@@ -1,0 +1,57 @@
+Reading logs...
+Read 494 logs
+../../datasets/darpa2000/simplified_parsed_v3/inside2_events_simplified_parsed_v3.csv
+Reading AASGs...
+Read 1 AASGs
+../aasg/mill2_test_darpa2000_aasg.json
+{'p_initial_ph': 1000.0, 'p_minimum_ph': 100.0, 'p_omega': 1000.0, 'p_t_max': 1200, 'p_delta_ph_0': 500.0, 'p_evap_rate': 0.02, 'p_minimum_ph_attack': 200.0}
+63967,1005318576.0,nan,nan,202.077.162.213,172.016.115.020,Sadmind_Amslverify_Overflow,nan,nan,33896.0,32773.0,nan,nan
+
+
+There is match
+63967,1005318576.0,nan,nan,202.077.162.213,172.016.115.020,Sadmind_Amslverify_Overflow,nan,nan,33896.0,32773.0,nan,nan
+63997,1005319300.0,nan,nan,202.077.162.213,172.016.115.020,FTP_Put,nan,nan,65267.0,21.0,nan,nan
+[165, 210]
+63963,1005318578.0,nan,nan,202.077.162.213,172.016.115.020,Sadmind_Amslverify_Overflow,nan,nan,33912.0,32773.0,nan,nan
+
+
+There is match
+63963,1005318578.0,nan,nan,202.077.162.213,172.016.115.020,Sadmind_Amslverify_Overflow,nan,nan,33912.0,32773.0,nan,nan
+63997,1005319300.0,nan,nan,202.077.162.213,172.016.115.020,FTP_Put,nan,nan,65267.0,21.0,nan,nan
+[166, 210]
+64066,1005320082.0,nan,nan,172.016.115.020,172.016.112.050,Sadmind_Amslverify_Overflow,nan,nan,33368.0,32773.0,nan,nan
+
+
+There is match
+64066,1005320082.0,nan,nan,172.016.115.020,172.016.112.050,Sadmind_Amslverify_Overflow,nan,nan,33368.0,32773.0,nan,nan
+64077,1005320205.0,nan,nan,172.016.115.020,172.016.112.050,FTP_Put,nan,nan,32839.0,21.0,nan,nan
+[276, 286]
+64072,1005320207.0,nan,nan,172.016.112.050,172.016.115.020,Mstream_Zombie,nan,nan,33345.0,9325.0,nan,nan
+[276, 286, 287]
+64063,1005320084.0,nan,nan,172.016.115.020,172.016.112.050,Sadmind_Amslverify_Overflow,nan,nan,33369.0,32773.0,nan,nan
+
+
+There is match
+64063,1005320084.0,nan,nan,172.016.115.020,172.016.112.050,Sadmind_Amslverify_Overflow,nan,nan,33369.0,32773.0,nan,nan
+64077,1005320205.0,nan,nan,172.016.115.020,172.016.112.050,FTP_Put,nan,nan,32839.0,21.0,nan,nan
+[277, 286]
+64072,1005320207.0,nan,nan,172.016.112.050,172.016.115.020,Mstream_Zombie,nan,nan,33345.0,9325.0,nan,nan
+[277, 286, 287]
+*********
+Alert
+1005321409.0
+Position 358
+[64066, 64077, 64072]
+[0, 5, 8]
+[276, 286, 287]
+*********
+Alert
+1005321409.0
+Position 358
+[64063, 64077, 64072]
+[0, 5, 8]
+[277, 286, 287]
+Number of alerts:
+2
+Execution time (seconds):
+0.588006019592

@@ -1,0 +1,5 @@
+[**] [129:12:1] Consecutive TCP small segments exceeding threshold [**]
+[Classification: Potentially Bad Traffic] [Priority: 2]
+06/13-04:03:22.760230 192.168.5.122:143 -> 192.168.2.111:4480
+TCP TTL:63 TOS:0x0 ID:2788 IpLen:20 DgmLen:86 DF
+***AP**F Seq: 0x94E12B3C  Ack: 0xD6C6FB79  Win: 0x1920  TcpLen: 20

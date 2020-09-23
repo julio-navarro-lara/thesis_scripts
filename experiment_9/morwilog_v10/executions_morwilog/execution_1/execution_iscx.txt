@@ -1,0 +1,49 @@
+Reading logs...
+Read 9608 logs
+../../datasets/iscx/aggr_iscx_ids_simplify_parsed_v3.csv
+Reading AASGs...
+Read 1 AASGs
+../aasg/iscx_aasg.json
+{'p_initial_ph': 1000.0, 'p_minimum_ph': 100.0, 'p_omega': 1000.0, 'p_t_max': 28800, 'p_delta_ph_0': 500.0, 'p_evap_rate': 0.02, 'p_minimum_ph_attack': 200.0}
+6195,1497354061.0,nan,nan,192.168.1.105,192.168.5.122,ICMP test detected,nan,nan,nan,nan,nan,nan
+
+
+There is match
+6195,1497354061.0,nan,nan,192.168.1.105,192.168.5.122,ICMP test detected,nan,nan,nan,nan,nan,nan
+11442,1497357898.0,nan,nan,63.111.123.26,192.168.5.122,ICMP test detected,nan,nan,nan,nan,nan,nan
+
+
+There is match
+11442,1497357898.0,nan,nan,63.111.123.26,192.168.5.122,ICMP test detected,nan,nan,nan,nan,nan,nan
+17675,1497380315.0,nan,nan,192.168.2.112,192.168.5.1,ICMP test detected,nan,nan,nan,nan,nan,nan
+
+
+There is match
+17675,1497380315.0,nan,nan,192.168.2.112,192.168.5.1,ICMP test detected,nan,nan,nan,nan,nan,nan
+17676,1497380315.0,nan,nan,192.168.2.112,192.168.5.4,ICMP test detected,nan,nan,nan,nan,nan,nan
+[6987, 6988]
+18700,1497380320.0,nan,nan,192.168.2.112,192.168.5.123,ET POLICY Suspicious inbound to Oracle SQL port 1521,nan,nan,nan,nan,nan,nan
+[6987, 6988, 7253]
+21929,1497401498.0,nan,nan,142.167.88.44,192.168.5.122,ET EXPLOIT Wscript Shell Run Attempt - Likely Hostile,nan,nan,nan,nan,nan,nan
+[6987, 6988, 7253, 9061]
+18870,1497381369.0,nan,nan,63.111.123.26,192.168.5.122,ICMP test detected,nan,nan,nan,nan,nan,nan
+
+
+There is match
+18870,1497381369.0,nan,nan,63.111.123.26,192.168.5.122,ICMP test detected,nan,nan,nan,nan,nan,nan
+21722,1497400634.0,nan,nan,142.166.115.14,192.168.5.122,ICMP test detected,nan,nan,nan,nan,nan,nan
+
+
+There is match
+21722,1497400634.0,nan,nan,142.166.115.14,192.168.5.122,ICMP test detected,nan,nan,nan,nan,nan,nan
+*********
+Alert
+1497405662.0
+Position 9607
+[17675, 17676, 18700, 21929]
+[0, 1, 3, 8]
+[6987, 6988, 7253, 9061]
+Number of alerts:
+1
+Execution time (seconds):
+19.3195261955
